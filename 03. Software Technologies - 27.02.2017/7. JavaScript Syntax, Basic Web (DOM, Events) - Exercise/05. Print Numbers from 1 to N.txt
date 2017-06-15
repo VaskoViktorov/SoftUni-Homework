@@ -1,0 +1,6 @@
+function multiplyNumber(nums){
+    let num = Number(nums[0]);
+    for(i=1;i<=num;i++){
+        console.log(i)
+    }
+}

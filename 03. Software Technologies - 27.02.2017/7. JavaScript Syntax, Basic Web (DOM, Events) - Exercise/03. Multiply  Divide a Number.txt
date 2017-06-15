@@ -1,0 +1,10 @@
+function multiplyNumber(nums){
+    let num = Number(nums[0]);
+    let num1 = Number(nums[1]);
+    if(num<=num1) {
+        return num * num1;
+    }
+    else {
+        return num/ num1;
+    }
+}

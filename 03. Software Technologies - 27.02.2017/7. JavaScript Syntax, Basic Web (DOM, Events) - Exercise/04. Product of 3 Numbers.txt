@@ -1,0 +1,11 @@
+function multiplyNumber(nums){
+    let num = Number(nums[0]);
+    let num1 = Number(nums[1]);
+    let num2 = Number(nums[2]);
+    if(num<0 && num1<0 && num2 <0 || num<0 && num1>0 && num2>0 || num>0 && num1<0 && num2>0 || num>0 && num1>0 && num2<0) {
+        return 'Negative';
+    }
+    else {
+        return 'Positive';
+    }
+}
