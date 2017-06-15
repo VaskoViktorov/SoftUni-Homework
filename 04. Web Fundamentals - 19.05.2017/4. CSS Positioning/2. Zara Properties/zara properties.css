@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:700|Open+Sans:400,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body{
+    font-family: "Open Sans", 'Arial', sans-serif;
+    font-size: 14px;
+    padding: 0px;
+    margin: 0px;
+}
+aside{
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    text-align: center;
+    width: 250px;
+}
+aside h1{
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 45px;
+}
+aside img{
+    border-radius: 100px;
+    width: 40%;
+}
+aside p{
+    text-transform: uppercase;
+    color: #b1bfc6;
+    margin-top: 5px;
+}
+aside ul{
+    float: left;
+    list-style-type: none;
+    padding: 0px;
+}
+aside li{
+text-align: left;
+padding: 10px 0px 10px 0px;
+}
+aside a{
+    padding: 10px 0px 10px 16px;
+    border-left: 4px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-decoration: none;
+     color: #b1bfc6;
+   
+}
+aside a:hover{
+    border-left: 4px solid #ff7739;
+    color: #384850;
+}
+main{
+    margin-left: 270px; 
+    background:  #f3f5f7;
+    padding-bottom: 40px;
+}
+main h1{
+    margin: 0px;
+    padding: 45px 0px 20px 40px;
+    font-size: 35px;
+    font-weight: normal;
+    
+}
+main span{
+    color: #91a5af;
+}
+main button{
+    float: right;
+    position: relative;
+    bottom: 50px;
+    right: 50px;
+    color: #f3f5f7;
+    border: 2px solid #ff7739;
+    padding: 8px 10px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    background: #ff7739;
+   
+}
+main button:hover{
+    color: #ff7739;
+    background: #f3f5f7;
+}
+p.place{
+   padding-left: 40px;
+   margin-top: 30px;
+   font-weight: bold;
+   text-transform: capitalize;
+}
+p.info{
+   padding-left: 40px;
+   margin-bottom: 30px;
+   text-transform: uppercase;
+   font-size: 12px;
+}
+main section{
+    padding-left: 40px;
+}
+main section div{
+    background: #ffffff;
+    margin-right: 40px;
+    display: inline-block;
+    box-shadow: 8px 6px 17px -1px rgba(0,0,0,0.26);
+}
+div.rented p.description{
+    color: #91a5af;
+}
+div p.description{
+    text-transform: capitalize;
+    margin-left: 20px;
+}
+.sign{
+    position: relative;
+    right: 20px;
+    top: 65px;
+    text-align: center;
+    display: block;
+    border-radius: 20px;
+    color: #ffffff;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    width: 75px;
+}
+.sign.rented-sign{
+    background: #b1bfc6;
+}
+.sign.listed-sign{
+    background: #68bc69;
+}
+.sign.draft-sign{
+    background:  #91a5af;
+}

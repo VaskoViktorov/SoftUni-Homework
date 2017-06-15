@@ -1,0 +1,19 @@
+div#wrapper {
+    
+    border: 1px solid #000000;
+    background: #dddddd;
+    Width: 400px;
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 18px;
+}
+q::before {
+
+content: open-quote;
+
+}
+q::after {
+
+content: close-quote;
+
+}

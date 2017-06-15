@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+body{
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+    color: #1E1917;
+    background: #EEEEEE;
+}
+header{
+    width: 800px;
+    margin: 0px auto;
+    border-top: 10px solid #324E5E;
+    border-right: 10px solid #324E5E;
+    background: #ffffff;
+}
+h1{
+    color: #324E5E;
+    padding: 0px 0px 20px 40px;
+}
+main{
+    padding-top: 20px;
+    width: 800px;
+    margin: 0px auto;
+}
+.first {
+    display: block;
+    margin: 10px 0px;
+}
+input[type="text"], input[type="email"], input[type="password"]{
+    border: none;
+    border-top: 3px solid #324E5E;
+    border-left: 3px solid #324E5E;
+    width: 600px;
+    height: 25px;
+}
+.first input[type="checkbox"]{
+    margin-left: 95px;
+}
+div.second{
+    margin: 10px 0px;
+}
+div.second label{
+margin-right: 200px;
+}
+input[type="password"]{
+    margin-bottom: 10px;
+}
+ul{
+     border-top: 3px solid #324E5E;
+    border-left: 3px solid #324E5E;
+    background: #ffffff;
+    width: 600px;
+    padding: 0px 0px 10px 0px;
+    list-style: none;
+}
+li{
+    margin: 10px;
+}
+p{
+    padding: 20px 0px 0px 0px;
+    margin-bottom: 10px;
+   
+}
+a{
+ color: #1D7569;
+}
+button{
+    border: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    background: #EEEEEE;
+    padding: 10px 100px;
+}
+button.cancel{
+color: #FF5427;
+  border-bottom: 5px solid  #FF5427;
+  border-right: 5px solid  #FF5427;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+button.save{
+  color: #1D7569;
+  border-bottom: 5px solid  #1D7569;
+  border-right: 5px solid  #1D7569;
+}
+button.cancel:hover{
+color: #ffffff;
+background: #FF5427;
+}
+button.save:hover{
+color: #ffffff;
+background: #1D7569;
+}
+

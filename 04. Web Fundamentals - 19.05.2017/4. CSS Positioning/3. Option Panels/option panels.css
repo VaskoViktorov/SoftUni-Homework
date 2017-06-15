@@ -1,0 +1,77 @@
+@import url('fonts/fonts.css');
+
+body{
+    font-family: 'Tahoma', 'Arial', sans-serif;
+    font-size: 15px;
+    color: #191923;
+   
+    width: 1000px;
+    background: grey;
+    margin: 0px auto;
+}
+nav{
+    background: #ffffff;
+}
+ul{
+    text-align: left;
+}
+li{
+    display: inline-block;
+    padding: 30px 10px;
+
+}
+nav li a{
+    text-decoration-line: none;
+    color: #191923;
+    text-transform: uppercase;
+}
+nav li:nth-child(1) a:nth-child(1){
+    color: red;
+    text-transform: capitalize;
+}
+nav li a:hover{
+   color: red; 
+}
+main{
+    padding: 0px;
+    margin: 50px 0 0 0;
+    
+}
+section{
+    background: #ffffff;
+    display: inline-block;
+    height: 283px;
+    vertical-align: top;
+    
+}
+img{
+    width: 230px;
+    height: 150px;
+     display: inline-block;
+}
+h4{
+    padding: 15px;
+    margin: 0px;
+     display: block;
+     text-align: left;
+     text-transform: uppercase;
+     font-weight: normal;
+}
+main p{
+    display: block;
+    padding: 5px 15px;
+    margin: 0px;
+    text-align: left;
+    width: 200px;
+}
+main a{
+    text-decoration-line: none;
+    color: #191923;
+}
+section.left{
+    margin-right: 21.33px;
+    
+}
+main section:hover{
+    opacity: 0.8;
+}

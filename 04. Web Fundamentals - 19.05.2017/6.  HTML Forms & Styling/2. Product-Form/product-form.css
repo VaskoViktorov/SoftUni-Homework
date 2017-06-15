@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("https://fonts.googleapis.com/css?family=Anton");
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    background: #FAFAFA;
+}
+main{
+margin: 200px auto;
+width: 60%;
+box-shadow: 30px 24px 18px -13px  rgba(66, 201, 202, 0.3);
+height: 589px;
+border-radius: 30px;
+}
+img{
+ background: linear-gradient(to bottom, #6afdc9 0%,#42c9ca 100%); 
+ float: left;
+ width: 40%;
+ padding: 50px 0px 100px 0px;
+ border-top-left-radius: 30px;
+ border-bottom-left-radius: 30px;
+ min-width: 250px;
+}
+section{
+    display: block;
+    float: right;
+    width: 60%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background: #ffffff;
+    min-width: 250px;
+}
+h1{
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    margin: 50px 0px 0px 30px;
+}
+h2{
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    margin: 50px 0px 50px 30px;
+
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+    margin-left: 30px;
+}
+label{
+    margin: 20px 70px 20px 0px;
+}
+select{
+    background: #42c9ca;
+    color: white;
+    border: none;
+    box-decoration-break: none;
+    padding: 5px 150px 5px 5px;
+    margin-left: 20px;
+    -webkit-appearance: none;
+}
+input{
+    color: #42c9ca;
+    border:none;
+    border-bottom: 3px solid #42c9ca;
+    padding: 5px 0px 5px 5px;
+    margin-left: 20px;
+}
+input::-webkit-input-placeholder{
+    color: #42c9ca;
+}
+button{
+    text-transform: uppercase;
+    color: #42c9ca;
+     border-style: none;
+    border: 3px solid #42c9ca;
+    border-radius: 20px;
+    padding: 5px 20px;
+    background: #ffffff;
+    margin: 42px 0px 39px 0px;
+}
+button:hover{
+    background: #42c9ca;
+    color: #ffffff;
+}

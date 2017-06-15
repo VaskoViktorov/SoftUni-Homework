@@ -1,0 +1,130 @@
+@font-face {
+font-family: 'MyWebFont';
+src: url(https://fonts.googleapis.com/css?family=Lato:300,400,900) format('woff2');
+}
+body{
+   font-family: 'Lato', sans-serif;
+   font-size:  14px;
+   background: linear-gradient(45deg, rgba(253,149,192,1) 0%,rgba(195,95,204,1) 38%,
+  rgba(175,104,241,1) 66%,rgba(175,104,241,1) 84%, rgba(168,125,255,1) 100%) fixed;
+  height: 100%;
+    margin: 0;
+
+}
+main{
+    border-radius: 20px;
+    background-color: #2D3151;
+    margin: 50px 170px;
+    padding: 0px 80px 0px 30px;
+
+}
+li{
+    display: inline-block;  
+    background: #ffffff;
+    border-radius: 20px;
+    margin: 15px;
+    padding-bottom: 25px;
+ 
+
+}
+.title{
+    
+    padding: 50px 100px 25px 0;
+    margin: 0;
+    text-align:left;
+    border-radius: 20px;
+    font-size: 50px;
+    color: #ffffff;
+    
+}
+li#basic-plan .title{
+background: url("img/plan-background-basic.png");
+width: 120px;
+height: 80px;
+background-size: cover; 
+background-position: center center; 
+text-align: left;
+}
+li#pro-plan .title{
+background: url("img/plan-background-pro.png");
+background-size: cover; 
+background-position: center center; 
+width: 120px;
+height: 80px;
+}
+li#med-plan .title{
+background: url("img/plan-background-med.png");
+background-size: cover; 
+background-position: center center; 
+width: 120px;
+height: 80px;
+}
+.price{
+    font-size: 70px;
+    padding-left: 20px;
+    margin: 0px;
+    text-align: left;
+}
+.plan{
+    padding-left: 20px;
+    text-align: left;
+}
+.select-plan{
+    border-radius: 50px;
+    font-size: 20px;
+    background: linear-gradient(45deg, rgba(253,149,192,1) 0%,rgba(195,95,204,1) 38%,
+  rgba(175,104,241,1) 66%,rgba(175,104,241,1) 84%, rgba(168,125,255,1) 100%);
+  background-size: cover; 
+background-position: center center; 
+  color: #ffffff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+   position:absolute;
+   margin-left: 85px;
+   
+}
+.chosen-plan{
+  border-radius: 50px;
+    font-size: 20px;
+    background: linear-gradient(225deg,  rgba(175,104,241,1) 66%,rgba(175,104,241,1) 84%, rgba(168,125,255,1) 100%);
+  background-size: cover; 
+background-position: center center; 
+  color: #ffffff;
+  border: none;
+  width: 50px;
+  height: 50px;  
+ cursor: pointer;
+ position:absolute;
+  margin-left: 85px;
+}
+.information{
+    color: #ffffff;
+    display: inline-block;
+    width: 480px;
+    margin-left: 30px;
+}
+.plan-title { 
+    text-transform: capitalize;
+}
+.next-step{
+    text-align: center;
+    
+}
+.continue{
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    margin-left: 80px;
+    color: #ffffff;
+    text-transform: capitalize;
+    background: linear-gradient(45deg, rgba(255,195,135,1) 0%,rgba(255,151,91,1) 38%,
+  rgba(255,143,84,1) 66%,rgba(255,103,15,1) 84%, rgba(249,74,0,1) 100%);
+  background-size: cover; 
+background-position: center center; 
+font-weight: bold;
+cursor: pointer;
+}

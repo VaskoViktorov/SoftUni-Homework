@@ -1,0 +1,159 @@
+body{
+font-family: 'Arial', 'Helvetica', sans-serif;
+font-size: 20px;
+background: url("images/background.jpg") no-repeat no-repeat center;
+background-size: cover;
+}
+header{
+    width: 800px;
+    margin: 0px auto;
+}
+main{
+    width: 800px;
+    margin: 0px auto;
+}
+nav{
+    display: inline-block;
+}
+ul{
+    display: inline-block;
+}
+li{
+    display: inline-block;
+    border-radius: 10px;
+}
+a{
+    text-decoration: none;
+    color: #1A7EBD;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+li:first-child a::before{
+    content: url("images/paraglider-icon.png");
+}
+li:first-child{
+    background: rgba(26, 126, 189, 0.5)
+}
+li:nth-child(2) a::before{
+    content: url("images/sky-diver.png");
+}
+li:nth-child(3) a::before{
+    content: url("images/climbing.png");
+}
+li:nth-child(4) a::before{
+    content: url("images/about-us.png");
+}
+li:hover{
+     background: rgba(26, 126, 189, 0.5)
+}
+span{
+    position: relative;
+    bottom: 15px;
+}
+fieldset.first{
+    display: inline-block;
+    border-style: solid;
+    border-color: #1A7EBD;
+    border-radius: 20px;
+    width: 360px;
+    height: 350px;
+}
+.first input{
+display: inline-block;
+background: rgba(96, 255, 255, 0.5);
+border-style: none;
+border: 1px solid #1A7EBD;
+width: 290px;
+height: 40px;
+border-radius: 20px;
+font-size: 22px;
+padding-left: 60px;
+}
+input::-webkit-input-placeholder{
+    color: #1A7EBD;
+    font-size: 22px;
+}
+.first img{
+    position: relative;
+    left: 10px;
+    top: 35px;
+}
+legend{
+    color: #1A7EBD;
+    text-align: center;
+}
+.second{
+    float: right;
+    width: 360px;
+    height: 350px;
+    border-style: solid;
+    border-color: #1A7EBD;
+    border-radius: 20px;
+    text-align: center;
+}
+.second label{
+    color: #1A7EBD;
+    margin-bottom: 20px;
+}
+legend{
+    margin-bottom: 30px;
+}
+input[type="radio"]{
+    margin: 20px 0px 20px 5px;
+}
+select{
+background: rgba(96, 255, 255, 0.5);
+border-style: none;
+border: 1px solid #1A7EBD;
+width: 350px !important;
+height: 40px;
+border-radius: 20px;
+font-size: 22px;
+padding-left: 10px;  
+color:   #1A7EBD;
+margin: 10px 0px;
+}
+input[type="date"]{
+ background: rgba(96, 255, 255, 0.5);
+border-style: none;
+border: 1px solid #1A7EBD;
+width: 290px;
+height: 40px;
+border-radius: 20px;
+font-size: 22px;
+padding-left: 60px;  
+color:   #1A7EBD;
+margin: 10px 0px;   
+}
+div.buttons{
+    text-align: right;
+    margin-left: 619px;
+}
+button{
+    font-size: 24px;
+    border-style: none;
+    background: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}
+button.clear{
+   
+    border: 1px solid red;
+    color: red;
+    font-weight: bold;
+}
+button.send{
+    border: 1px solid green;
+    color: green;
+    font-weight: bold;
+}
+button.clear:hover{
+background: rgba(255, 0, 0, 0.5);
+color: #ffffff;
+}
+button.send:hover{
+background: rgba(0, 255, 0, 0.5);
+color: #ffffff;
+}

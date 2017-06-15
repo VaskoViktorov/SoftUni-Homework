@@ -1,0 +1,142 @@
+@font-face {
+font-family: 'MyWebFont';
+src: url(https://fonts.googleapis.com/css?family=Lato:300,400,900) format('woff2');
+}
+body{
+   font-family: 'MyWebFont', Lato, sans-serif;
+   color: #ffffff;
+   margin: 0;
+}
+.container{
+    align-content: center;
+    padding: 0 10px;
+    background: #293F50;
+    background-size: cover;
+    height: 800px;
+    text-align: center;
+}
+h1{
+    font-size: 60px;
+    padding: 150px 0px;
+    text-transform: uppercase; 
+    margin: 0;
+    
+}
+h2{
+     color: #60867E;
+      padding-bottom: 20px;
+      margin: 0;
+      font-size: 40px;
+}
+p{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 100;
+    margin: 0px;
+    padding-bottom: 20px;
+  
+    
+}
+p#date{
+     float: right;
+     color: #60867E;
+     font-size: 14px;
+     margin: 0;
+     padding-top: 20px;
+}
+.btn{
+    color: #ffffff;
+    background: none;
+    border: 3px solid #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+button:hover{
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #293F50;
+    cursor: pointer;
+}
+table{
+    align-content: center;
+    border: 5px solid #c6c7cc;
+    border-radius: 5px;
+    margin: 20px 5px 20px 5px;
+    padding: 30px 200px 50px 200px;
+}
+img{
+    border-radius: 20px;
+    width:  400px;
+}
+th{
+   padding: 10px;
+   color: #c6c7cc;
+   text-align: left;
+   text-transform: uppercase;
+   border: none;
+}
+td{
+    text-align: left;
+    padding-right: 50px;
+    padding-top: 20px;
+    border: none;
+    color: #c6c7cc;
+}
+footer{
+background-color: #000000;
+text-align: center;
+ line-height: 230px;
+}
+p#footer{
+color: #ffffff;
+font-size: 25px;
+height: 80px;
+line-height: 80px;
+margin: 0px;
+float: left;
+padding-left: 50px;
+padding-top: 90px;
+}
+ul#footer{
+    padding-left: 1300px;
+    background-color: #293F50;
+    margin: 0;
+   
+}
+nav{
+    margin: auto;
+    align-self: auto;
+    background: #293F50;
+    background-size: cover;
+     
+}
+ul#nav{
+    padding-left: 10px;
+    padding-top: 20px;
+    line-height: 30px;
+    background-color: #293F50;
+    margin: 0;
+    
+}
+li{
+    text-transform: uppercase; 
+    width: 100px;
+    margin: 0;
+    padding: 5px 0;
+    cursor: pointer;
+    color: #60867E;
+    text-align: center;
+    display:inline-block;
+    
+}
+li a{
+    text-decoration: none;
+    color: #60867E;
+    margin: 0;
+}
+li:hover#nav{
+background-color: #ffffff;
+padding: 5px 0;
+}

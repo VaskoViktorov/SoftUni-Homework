@@ -1,0 +1,104 @@
+@font-face {
+font-family: 'MyWebFont';
+src: url(https://fonts.googleapis.com/css?family=Lato:300,400,900) format('woff2');
+}
+body{
+   font-family: 'Lato', sans-serif;
+   font-size:  16px;
+   color: #333333;
+   margin: 0px;
+   padding: 0px; 
+ background: #24437C ;
+    background-size: cover;
+}
+nav ul{
+float: right;
+margin-right: 20px;
+}
+nav li{
+    display: inline-block;
+    line-height: 20px;
+    color: #ffffff;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+nav li:nth-last-child(1){
+    padding: 7px 1px;
+    border-radius: 8px;
+    background: #3DC1EF;
+}
+nav .nav-item a{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 13px;
+    font-size: 13px;
+    
+    
+}
+nav .nav-item a:hover{
+    border-radius: 10px;
+    background: #3DC1EF;
+}
+nav img{
+    width: 100px;
+    margin: 30px 0px 0px 30px;
+}
+h1{  
+    text-align: center;
+    text-transform: capitalize;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-top: 150px;
+}
+.header-subtitle{
+    text-align: center;
+    color: #3E7BA1;
+    text-transform: capitalize;
+}
+div#button-container{
+    width: 100px;
+
+    text-align: center;
+    color: #ffffff;
+    text-transform: capitalize;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 570px;
+    border-radius: 10px;
+    background: #3DC1EF;
+}
+.header-services{
+margin-left: 70px;
+margin-top: 100px;
+}
+li.service{
+    display: inline-block;
+    line-height: 20px;
+    color: #ffffff;
+    padding: 70px 20px;
+    margin-right: 40px;
+}
+li.service:hover{
+
+    background: #3DC1EF;
+}
+h2.service-title{
+    text-align: left;
+    text-transform: capitalize;
+    width: 230px;
+    margin-bottom: 40px;
+    padding-left: 20px;
+
+}
+p.service-intro{
+    width: 300px;
+}
+.service-link{
+    padding: 80px 200px 0px 0px;
+    float: right ;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+}

@@ -1,0 +1,57 @@
+@font-face {
+font-family: 'MyWebFont';
+src: url(https://fonts.googleapis.com/css?family=Lato:300,400,900) format('woff2');
+}
+body{
+   font-family: 'Lato', sans-serif;
+   font-size:  16px;
+   color: #fff;
+   background: #333;
+  
+}
+main{
+     background: url("img/food-image-bg.png")  no-repeat center;
+     height: 1000px;
+     border-radius: 150px;  
+}
+h1{
+    font-size: 56px;
+    font-style: bold;
+    text-transform: uppercase;
+    float: right;
+    margin-top: 210px;
+    margin-right: 100px;
+}
+.recipies-info p:nth-child(1){
+margin-left: 120px;
+}
+.recipies-info p{
+display: inline-block;
+margin-left: 35px;
+margin-top: 210px;
+padding: 10px;
+}
+span{
+    color: #b5c640
+}
+.btn-primary{
+background: none;
+border: 2px solid #fff;
+border-radius: 20px;
+padding: 10px 20px;
+margin-left: 360px;
+color: #fff;    
+}
+.btn-primary:hover{
+    background: #b5c640;
+    cursor: pointer;
+    border: 2px solid #b5c640;
+}
+.step{
+    float: right;
+    display: inline-block;
+    width: 700px;
+    padding: 20px 60px 0 0;
+
+
+}

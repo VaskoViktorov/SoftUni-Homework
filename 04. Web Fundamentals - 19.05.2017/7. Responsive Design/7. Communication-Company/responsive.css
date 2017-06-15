@@ -1,0 +1,43 @@
+@media screen and (max-width: 1200px){
+  div.wrapper{
+      margin-left: 50px;
+      width: auto;
+  }
+  section, footer{
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+}
+@media screen and (max-width: 700px){
+    footer{
+        display: block;
+        width: 100%;
+    }
+    .main-foot .wrapper{
+        display: block;
+        
+    }
+  div.wrapper{
+      margin-left: 10px;
+      display: inline-block;
+  }
+  .button-list li{
+      margin-right: 5px;
+  }
+.main-foot address{
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 70px;
+}   
+.main-foot address, .main-foot nav{
+     width: 200px;
+    display: inline-block;
+    vertical-align: top;
+     margin-right: 70px;
+}
+.hero-head .wrapper{
+    margin-bottom: 50px;
+}
+}

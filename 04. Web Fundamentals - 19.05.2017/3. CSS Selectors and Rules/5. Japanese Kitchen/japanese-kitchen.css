@@ -1,0 +1,125 @@
+@font-face {
+font-family: 'MyWebFont';
+src: url(https://fonts.googleapis.com/css?family=Lato:300,400,900) format('woff2');
+}
+body{
+   font-family: 'Lato', sans-serif;
+   font-size: 14px;
+   background: url("images/dark-wood.jpg") fixed;
+   margin: 0px 200px;
+   padding: 0px;
+}
+header{
+    background-image: url("images/header-page.jpg");
+    background-size: cover;
+    text-align: right;
+    margin: 0px;
+    padding: 0px;
+
+}
+header h1{
+    margin: 0px;
+    padding: 40px 10px 60px 0px;
+    font-size: 50px;
+}
+nav{
+   background-image: url("images/header-page.jpg");
+    background-size: cover; 
+}
+ul{
+    margin: 5px;
+}
+nav li{
+    display: inline-block;
+    padding: 6px 20px;
+}
+nav li a{
+    text-decoration:none;
+    color: #ffffff ;
+    font-weight: bold;
+}
+nav li:nth-child(1) a{
+    color: black;
+}
+nav li:nth-child(1) a:hover{
+color: #ffffff;
+}
+nav a:hover{
+    color: black;
+    cursor: pointer;
+}
+main{
+    background: #ffffff;
+}
+.courses{
+width: 635px;
+float: left;
+background: #ffffff;
+}
+article{
+padding-bottom: 20px;
+}
+article figure{
+border: 2px solid #F7F7F7;
+      float: left;
+      padding: 5px;
+    margin: 20px 20px 0px 20px;
+    width: 290px;
+}
+article figcaption{
+    float: left;
+    margin:0px;
+    padding: 0px;
+    width: 290px;
+
+}
+article div{
+    padding-top: 10px;
+    float: right;
+    width: 290px;
+}
+article p{
+    margin-right: 40px;
+    float: right;
+    width: 250px;
+}
+article h3{
+ color: #DEC582;
+}
+aside{
+    padding: 0px 25px 78px 0px; 
+    float: right;
+    width: 200px;
+    margin: 0px;
+    border: 2px solid #F7F7F7;
+    background: #ffffff;   
+    color: #DE658A;
+}
+aside ul{
+    padding-left: 22px;
+    
+}
+aside li{
+width: 120px;
+padding: 12px 0px 12px 0px;    
+
+list-style-type: none;
+text-align: left;
+border-bottom: 2px solid #F7F7F7;
+}
+aside h2{
+    width: 100px;
+    margin-left: 25px;
+}
+aside li a {
+text-decoration: none;
+color:  #DE658A;
+}
+footer{
+    background-image: url("images/header-page.jpg");
+    background-size: cover; 
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+    all: default;
+}

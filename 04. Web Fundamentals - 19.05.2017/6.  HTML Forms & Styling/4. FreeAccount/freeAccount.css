@@ -1,0 +1,132 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+
+body{
+    font-family: 'Tahoma', 'Helvetica', sans-serif;
+    font-size: 13px;
+    margin: 0px;
+    background: #EEEEEE;
+}
+main{
+    text-align: center;
+    width: 800px;
+    height: 550px;
+    margin: 0px auto;
+    background: #ffffff;
+}
+h1{
+    font-size: 24px;
+}
+header{
+    margin: 0px auto;
+    width: 700px;
+    border-bottom: 3px solid #EEEEEE;
+}
+form.left{
+    display: block;
+    float: left;
+    width: 400px;
+    margin-top: 30px;
+    margin-right: 20px;
+    
+}
+label.big{
+    font-size: 17px;
+    font-weight: bold;
+    margin-right: 205px;
+}
+input:not(.checkbox){
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+    border-style: none;
+    border: 2px solid #EEEEEE;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.left i{
+    position: relative;
+    right: 35px;
+    top: 2px;
+    color: #ffffff;
+    
+}
+i.fa-times{
+    background: #FF0500;
+    font-size: 20px;
+    padding: 3px;
+
+}
+i.fa-check{
+    background: #00FF00;
+    font-size: 20px;
+    padding: 3px;
+}
+.checkbox{
+    width: 20px;
+    height: 20px;
+ 
+}
+.check{
+    display: inline-block;
+    text-align: left;
+    width: 250px;
+    color: gray;
+    position: relative;
+    top: 7px;
+}
+.ch{
+    width: 300px;
+    padding-left: 25px;
+    margin-top: 20px;
+}
+button{
+    font-weight: bold;
+    border: none;
+    background: #EEEEEE;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 10px 35px;
+    box-shadow:4px 4px 14px 0px rgba(50, 50, 50, 0.42);
+    margin: 30px 155px 0px 0px;
+}
+form.right{
+    display: block;
+    float: left;
+    width: 300px;
+
+    margin-top: 30px;
+}
+.right i{
+    position: relative;
+    left: 130px;
+    bottom: 33px;
+    color: #ffffff;
+    
+}
+.right i.fa-times{
+    left: 200px;
+    bottom: 53px;
+}
+.right input.pass{
+    margin: 0px 0px 20px 0px;
+}
+a{
+    position: relative;
+    right: 95px;
+    color: #FF0500;
+}
+a:hover{
+    text-decoration: underline;
+    
+}
+button.login{
+    
+    margin-top: 20px;
+    margin-right: 195px;
+}
+button:hover{
+    background: #AFDF67;
+}

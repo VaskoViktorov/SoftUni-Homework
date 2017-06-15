@@ -1,0 +1,54 @@
+@media screen and (max-width: 1200px) {
+    body{     
+    display: flex;
+    flex-flow: row wrap;
+    }
+    header, main{
+        width: 80%;
+    }
+    nav ul{
+        display: flex;
+        justify-content: space-around;
+    }
+    header {
+        background-size: cover;
+    }
+    div#wrapper{
+        width: 100%;
+    }
+    main aside{
+        width: auto;
+    }
+    main section{
+        width: auto;
+        margin: 40px 30px 0px 30px;
+    }
+}
+@media screen and (max-width: 730px) {
+   nav ul{
+    display: flex;
+    flex-direction: column;
+   }
+ header nav > ul li{
+       width: 100%;
+   }
+  header > nav{
+   height: auto;  
+   }
+   main section > div{
+       height: auto;
+   }
+   main > section > div> div{
+       background: #b7cc89;
+       height: 170px;
+       width: 100%;
+       text-align: center;
+   }
+   main > section > div > article > h3{
+       text-align: center;
+   }
+   main > aside > article > h1, main > aside > article > h2{
+       text-align: center;
+   }
+}
+

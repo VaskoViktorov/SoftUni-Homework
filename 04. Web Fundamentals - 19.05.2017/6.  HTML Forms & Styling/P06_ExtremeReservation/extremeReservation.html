@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Extreme Sports</title>
+    <link rel="stylesheet" href="extremeReservation.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#"><span>Paragliding</span></a></li>
+                <li><a href="#"><span>Skydiving</span></a></li>
+                <li><a href="#"><span>Climbing</span></a></li>
+                <li><a href="#"><span>About Us</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <fieldset class="first">
+        <legend>Personal Info </legend>
+        <form>
+            <img src="images/user1.png"  class="profile">
+            <input type="text"  placeholder="Enter your full name">
+             <img src="images/phone.png"  class="phone">
+            <input type="text" placeholder="Enter a valid e-mail">
+             <img src="images/email.png"  class="email">
+            <input type="text" placeholder="Enter a phone number">
+        </form>
+        </fieldset>
+        <fieldset class="second">
+             <legend>Flight Info</legend>
+            <label>Are flying for first time?</label>
+            <div>
+            <input type="radio" name="flying">
+            <label >Yes</label>
+            <input type="radio" name="flying">
+            <label>No</label>
+            </div>
+            <label>Choose Destination</label>
+            <div>
+            <select>
+                <optgroup label="Bulgaria">
+                <option>Dobrostan</option>
+                <option>Sopot</option>
+                <option>Sofia</option>
+                <option>Bourgas</option>
+                <optgroup label="Rest of the world">
+                <option>Nepal</option>
+                <option>Turkey</option>
+                <option>France</option>
+            </select>
+            </div>
+            <label>Choose Date</label>
+            <div>
+            <input type="date">
+            </div>
+        </fieldset>
+        <div class="buttons">
+        <button class="clear">Clear</button>
+        <button class="send">Send</button>
+        </div>
+    </main>
+</body>
+</html>

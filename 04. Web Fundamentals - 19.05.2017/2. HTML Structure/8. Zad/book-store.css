@@ -1,0 +1,21 @@
+@font-face {
+font-family: 'MyWebFont';
+src: url(https://fonts.googleapis.com/css?family=Lato:300,400,900) format('woff2');
+}
+body{
+   font-family: 'MyWebFont', Lato, sans-serif;
+}
+table{
+    align-content: center;
+    border: 1px solid #c6c7cc;
+    border-collapse: collapse;
+}
+th{
+    border: 1px solid #c6c7cc; 
+    padding: 10px;
+}
+td{
+    text-align: left;
+    border: 1px solid #c6c7cc;
+    padding: 10px;
+}

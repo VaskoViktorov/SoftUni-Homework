@@ -1,0 +1,116 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+
+body{
+    font-family: 'Tahoma', 'Helvetica', sans-serif;
+    font-size: 13px;
+    margin: 0px;
+    background: #EBEBEB;
+}
+header{
+    background: #F1F1F1;
+    color: #32A2E4;
+    text-align: left;
+    margin: 0px auto;
+    width: 1200px;
+}
+header h1{
+    padding: 10px;
+    margin: 0px;
+    font-size: 28px;
+}
+main{
+    width: 1200px;
+    margin: 0px auto;
+}
+section.info article{
+    float:left;
+    width: 61%;
+    height: 93px;
+    margin-bottom: 20px;
+}
+.fa-search:before{
+    display: block;
+    position: absolute;
+    left: 300px;
+    bottom: 22px;
+}
+.search{
+    float: right;
+    width: 39%;
+    height: 93px;
+    position: relative;
+    margin-bottom: 20px;
+}
+input#search{
+    position: relative;
+}
+.search label{
+    margin: 35px 20px 0px 150px;
+    font-size: 16px;
+    display: block;
+    font-weight: bold;
+}
+.search input{
+    margin: 0px 0px 0px 150px;
+}
+form.details{
+    margin: 0px;
+    display: block;
+    width: 20%;
+    height: 155px;
+    float: left;
+}
+.details label{
+    font-weight: bold;
+    font-size: 1.17em;
+}
+.details input{
+    margin-top: 10px;
+    padding: 5px 0px;
+}
+form.reservation{
+    display: inline-block;
+    width: 50%;
+    height: 155px;
+     margin-left: 220px;
+}
+form.reservation h3{
+    margin: 0px 0px 10px 0px;;
+}
+.reservation div.room{
+    display: inline-block;
+    width: 400px;
+}
+select{
+    margin-top: 10px;
+    width: 400px;
+}
+.reservation div.amount{
+    display: inline-block;
+    width: 170px;
+}
+div.amount input{
+    margin-top: 10px;
+}
+.reservation div.date{
+    display: inline-block;
+    width: 290px;
+    margin-top: 10px;
+}
+.date input{
+    width: 278px;
+    margin-top: 10px;
+}
+button{
+    float: right;
+    background: #32A2E4;
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    padding: 7px 25px;
+    font-weight: bold;
+    margin: 10px 150px 0px 0px;
+}
+button:hover{
+    background: #3BBC96;
+}

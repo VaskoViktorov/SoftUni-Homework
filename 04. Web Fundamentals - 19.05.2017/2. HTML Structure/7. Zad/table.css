@@ -1,0 +1,43 @@
+@font-face {
+font-family: 'MyWebFont';
+src: url(https://fonts.googleapis.com/css?family=Lato:300,400,900) format('woff2');
+}
+body{
+   font-family: 'MyWebFont', Lato, sans-serif;
+   color: #ffffff;
+}
+table{
+    color: #333333;
+    border-spacing: none;
+    align-content: center;
+    margin:0;
+    border-collapse: collapse;
+}
+thead th{
+color: #ffffff;
+background-color: #90b4d6;
+text-align: center;
+letter-spacing: 2px;
+
+
+}
+tbody th{
+    padding: 5px 30px 5px 10px;
+    font-size: 18px;
+    margin: 0;
+    text-align: left;
+    background-color: #84b3ad;
+    
+}
+td{
+    padding: 5px 30px 5px 10px;
+    font-size: 18px;
+    margin: 0;
+    text-align: left;
+    background-color: #84b3ad;
+    width: 105px;
+}
+tr:nth-child(even) td, tr:nth-child(even) th {
+    background-color: #589ad8;
+   
+}
