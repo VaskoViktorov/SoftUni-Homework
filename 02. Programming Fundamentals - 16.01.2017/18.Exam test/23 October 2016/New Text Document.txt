@@ -1,0 +1,8 @@
+if (direction == "right")
+                            {
+                                newPosition = newPosition + length;
+                            }
+                            else if (direction == "left")
+                            {
+                                newPosition = newPosition - length;
+                            }
