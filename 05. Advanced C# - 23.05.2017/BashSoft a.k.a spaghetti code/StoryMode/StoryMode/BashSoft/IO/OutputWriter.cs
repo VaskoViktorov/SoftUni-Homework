@@ -29,7 +29,7 @@ namespace BashSoft
         }
         public static void PrintStudent(KeyValuePair<string, double> student)
         {
-            OutputWriter.WriteMessageOnNewLine($"{student.Key} - {student.Value}");
+            WriteMessageOnNewLine($"{student.Key} - {student.Value}");
         }
     }
 }

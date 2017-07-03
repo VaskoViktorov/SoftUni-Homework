@@ -9,15 +9,14 @@ using System.Threading.Tasks;
 namespace BashSoft
 {
 
-    public  class Tester
+    public class Tester
     {
-        public  void CompareContent(string userOutputPath, string expectedOutputPath)
-        {
-            OutputWriter.WriteMessageOnNewLine("Reading files...");
+        public void CompareContent(string userOutputPath, string expectedOutputPath)
+        {           
             try
             {
+                OutputWriter.WriteMessageOnNewLine("Reading files...");
                 string mismatchPath = GetMismatchPath(expectedOutputPath);
-
                 string[] actualOutputLines = File.ReadAllLines(userOutputPath);
                 string[] expectedOutputLines = File.ReadAllLines(expectedOutputPath);
 
@@ -25,12 +24,13 @@ namespace BashSoft
                 string[] mismatches =
                     GetLinesWithPossibleMissmatches(actualOutputLines, expectedOutputLines, out hasMismatch);
 
-                PrintOutput(mismatches, hasMismatch, mismatchPath);
+                this.PrintOutput(mismatches, hasMismatch, mismatchPath);
                 OutputWriter.WriteMessageOnNewLine("Files read");
             }
-            catch (FileNotFoundException)
+            catch (IOException)
             {
-                OutputWriter.DisplayException(ExceptionMessages.InvalidPath);
+                throw new IOException(ExceptionMessages.InvalidPath);
+              
             }
         }
 
@@ -45,7 +45,7 @@ namespace BashSoft
         private string[] GetLinesWithPossibleMissmatches(string[] actualOutputLines, string[] expectedOutputLines, out bool hasMismatch)
         {
             hasMismatch = false;
-            string output = string.Empty;            
+            string output = string.Empty;
             int minOutputLines = actualOutputLines.Length;
 
             if (actualOutputLines.Length != expectedOutputLines.Length)
@@ -88,18 +88,12 @@ namespace BashSoft
                     OutputWriter.WriteMessageOnNewLine(line);
 
                 }
-                try
-                {
-                    File.WriteAllLines(mismatchesPath, mismatches);
-                }
-                catch (DirectoryNotFoundException)
-                {
-                    OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidPath);
-                }
+
+                File.WriteAllLines(mismatchesPath, mismatches);
                 return;
             }
             OutputWriter.WriteMessageOnNewLine("Files are identical. There are no mismatches.");
-           
+
         }
     }
 }

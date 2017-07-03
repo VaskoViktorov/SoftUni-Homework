@@ -24,6 +24,36 @@ namespace BashSoft
         {
             string[] data = input.Split();
             string command = data[0];
+            command = command.ToLower();
+
+            try
+            {
+                this.ParseCommand(input, command, data);
+            }
+            catch (DirectoryNotFoundException dnfe)
+            {
+                OutputWriter.DisplayException(dnfe.Message);
+            }
+            catch (ArgumentOutOfRangeException aoore)
+            {
+                OutputWriter.DisplayException(aoore.Message);
+            }
+            catch (ArgumentException ae)
+            {
+                OutputWriter.DisplayException(ae.Message);
+
+            }          
+            catch (Exception e)
+            {
+                OutputWriter.DisplayException(e.Message);
+            }
+            
+           
+
+        }
+
+        private void ParseCommand(string input, string command, string[] data)
+        {
             switch (command)
             {
                 case "open":
@@ -38,16 +68,16 @@ namespace BashSoft
                 case "cmp":
                     TryCompareFiles(data);
                     break;
-                case "cdRel":
+                case "cdrel":
                     TryChangePathRelativlely(data);
                     break;
-                case "cdAbs":
+                case "cdabs":
                     TryChangePathAbsolute(data);
                     break;
-                case "readDb":
+                case "readdb":
                     TryReadDatabaseFromFile(data);
                     break;
-                case "dropDb":
+                case "dropdb":
                     TryDropDb(input, data);
                     break;
                 case "show":
@@ -57,18 +87,18 @@ namespace BashSoft
                     TryGetHelp();
                     break;
                 case "filter":
-                    TryFilterAndTake(input,data);
+                    TryFilterAndTake(input, data);
                     break;
                 case "order":
                     TryOrderAndTake(input, data);
                     break;
-                case "decOrder":
+                case "decorder":
                     //TODO
                     break;
                 case "download":
                     //TODO
                     break;
-                case "downloadAsynch":
+                case "downloadasynch":
                     //TODO
                     break;
                 default:
