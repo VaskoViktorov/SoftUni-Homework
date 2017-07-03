@@ -8,9 +8,19 @@ using System.Threading.Tasks;
 
 namespace BashSoft
 {
-    class CommandInterpred
+    public class CommandInterpreter
     {
-        public static void InterpredCommand(string input)
+        private Tester judge;
+        private StudentsRepository repository;
+        private IOManager inputOutputManager;
+
+        public CommandInterpreter(Tester judge, StudentsRepository repository, IOManager inputOutputManager)
+        {
+            this.judge = judge;
+            this.repository = repository;
+            this.inputOutputManager = inputOutputManager;
+        }
+        public void InterpredCommand(string input)
         {
             string[] data = input.Split();
             string command = data[0];
@@ -36,6 +46,9 @@ namespace BashSoft
                     break;
                 case "readDb":
                     TryReadDatabaseFromFile(data);
+                    break;
+                case "dropDb":
+                    TryDropDb(input, data);
                     break;
                 case "show":
                     TryShowWantedData(input, data);
@@ -64,12 +77,12 @@ namespace BashSoft
             }
         }
 
-        private static void DisplayInvalidCommandMessage(string input)
+        private void DisplayInvalidCommandMessage(string input)
         {
             OutputWriter.WriteMessageOnNewLine($"The command '{input}' is invalid");
         }
 
-        private static void TryOpenFile(string[] data)
+        private void TryOpenFile(string[] data)
         {
             if (File.Exists(data[1]))
             {
@@ -82,12 +95,12 @@ namespace BashSoft
             }
         }
 
-        private static void TryCreateDirectory(string[] data)
+        private void TryCreateDirectory(string[] data)
         {
             if (File.Exists(data[1]))
             {
                 string folderName = data[1];
-            IOManager.CreateDirectoryInCurrentFolder(folderName);
+                this.inputOutputManager.CreateDirectoryInCurrentFolder(folderName);
             }
             else
             {
@@ -95,11 +108,11 @@ namespace BashSoft
             }
         }
 
-        private static void TryTraverseFolders(string[] data)
+        private void TryTraverseFolders(string[] data)
         {
             if (data.Length == 1)
             {
-                IOManager.TraverseDirectory(0);
+                this.inputOutputManager.TraverseDirectory(0);
             }
             else if (data.Length == 2)
             {
@@ -107,7 +120,7 @@ namespace BashSoft
                 bool hasParsed = int.TryParse(data[1], out depth);
                 if (hasParsed)
                 {
-                    IOManager.TraverseDirectory(depth);
+                    this.inputOutputManager.TraverseDirectory(depth);
                 }
                 else
                 {
@@ -117,47 +130,57 @@ namespace BashSoft
             }
         }
 
-        private static void TryCompareFiles(string[] data)
+        private void TryCompareFiles(string[] data)
         {
             if (data.Length == 3)
             {
                 string firstPath = data[1];
                 string secondPath = data[2];
 
-                Tester.CompareContent(firstPath, secondPath);
+                this.judge.CompareContent(firstPath, secondPath);
             }
         }
 
-        private static void TryChangePathRelativlely(string[] data)
+        private void TryChangePathRelativlely(string[] data)
         {
             string relPath = data[1];
-            IOManager.ChangeCurrentDirectoryRelative(relPath);
+            this.inputOutputManager.ChangeCurrentDirectoryRelative(relPath);
         }
 
-        private static void TryChangePathAbsolute(string[] data)
+        private void TryChangePathAbsolute(string[] data)
         {
             string absolutePath = data[1];
-            IOManager.ChangeCurrentDirectoryAbsolute(absolutePath);
+            this.inputOutputManager.ChangeCurrentDirectoryAbsolute(absolutePath);
         }
 
-        private static void TryReadDatabaseFromFile(string[] data)
+        private void TryReadDatabaseFromFile(string[] data)
         {
             string fileName = data[1];
-            StudentsRepository.InitializeData(fileName);
+            this.repository.LoadData(fileName);
         }
 
-        private static void TryShowWantedData(string input, string[] data)
+        private void TryDropDb(string input, string[] data)
+        {
+            if (data.Length != 1)
+            {
+                this.DisplayInvalidCommandMessage(input);
+                return;
+            }
+            this.repository.UnloadData();
+            OutputWriter.WriteMessageOnNewLine("Database dropped!");
+        }
+        private void TryShowWantedData(string input, string[] data)
         {
             if (data.Length == 2)
             {
                 string courseName = data[1];
-                StudentsRepository.GetAllStudentFromCourse(courseName);
+                this.repository.GetAllStudentFromCourse(courseName);
             }
             else if(data.Length == 3)
             {
                 string courseName = data[1];
                 string userName = data[2];
-                StudentsRepository.GetStudentsScoreFromCourse(courseName, userName);
+                this.repository.GetStudentsScoreFromCourse(courseName, userName);
             }
             else
             {
@@ -165,7 +188,7 @@ namespace BashSoft
             }
         }
 
-        private static void TryGetHelp()
+        private void TryGetHelp()
         {
             OutputWriter.WriteMessageOnNewLine($"{new string('_', 100)}");
             OutputWriter.WriteMessageOnNewLine(string.Format("|{0, -98}|", "make directory - mkdir: path "));
@@ -183,7 +206,7 @@ namespace BashSoft
             OutputWriter.WriteEmptyLine();
         }
 
-        private static void TryOrderAndTake(string input, string[] data)
+        private void TryOrderAndTake(string input, string[] data)
         {
             if (data.Length == 5)
             {
@@ -200,13 +223,13 @@ namespace BashSoft
             }
         }
 
-        private static void TryParseParametersForOrderAndTake(string orderCommand, string takeQuantity, string courseName, string comparison)
+        private void TryParseParametersForOrderAndTake(string orderCommand, string takeQuantity, string courseName, string comparison)
         {
             if (orderCommand == "take")
             {
                 if (takeQuantity == "all")
                 {
-                    StudentsRepository.OrderAndTake(courseName, comparison);
+                    this.repository.OrderAndTake(courseName, comparison);
                 }
                 else
                 {
@@ -215,7 +238,7 @@ namespace BashSoft
 
                     if (hasParsed)
                     {
-                        StudentsRepository.OrderAndTake(courseName, comparison, studentsToTake);
+                        this.repository.OrderAndTake(courseName, comparison, studentsToTake);
                     }
                     else
                     {
@@ -229,7 +252,7 @@ namespace BashSoft
             }
         }
 
-        private static void TryFilterAndTake(string input, string[] data)
+        private void TryFilterAndTake(string input, string[] data)
         {
             if (data.Length == 5)
             {
@@ -246,13 +269,13 @@ namespace BashSoft
             }
         }
 
-        private static void TryParseParametersForFilterAndTake(string takeCommand, string takeQuantity, string courseName, string filter)
+        private void TryParseParametersForFilterAndTake(string takeCommand, string takeQuantity, string courseName, string filter)
         {
             if (takeCommand == "take")
             {
                 if (takeQuantity == "all")
                 {
-                    StudentsRepository.FilterAndTake(courseName, filter);
+                    this.repository.FilterAndTake(courseName, filter);
                 }
                 else
                 {
@@ -261,7 +284,7 @@ namespace BashSoft
 
                     if (hasParsed)
                     {
-                        StudentsRepository.FilterAndTake(courseName, filter, studentsToTake);
+                        this.repository.FilterAndTake(courseName, filter, studentsToTake);
                     }
                     else
                     {

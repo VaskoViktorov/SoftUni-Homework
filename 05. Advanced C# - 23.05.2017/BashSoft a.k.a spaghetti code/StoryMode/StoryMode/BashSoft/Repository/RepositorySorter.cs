@@ -5,14 +5,14 @@ using System.Linq;
 
 namespace BashSoft
 {
-    public class RepositorySorters
+    public class RepositorySorter
     {
-        public static void OrderAndTake(Dictionary<string, List<int>> wantedData, string comparison, int studentsToTake)
+        public void OrderAndTake(Dictionary<string, double> studentsMarks, string comparison, int studentsToTake)
         {
             comparison = comparison.ToLower();
             if (comparison == "ascending")
             {
-                PrintStudents(wantedData.OrderBy(x => x.Value.Sum())
+                this.PrintStudents(studentsMarks.OrderBy(x => x.Value)
                     .Take(studentsToTake)
                     .ToDictionary(pair => pair.Key, pair => pair.Value));
 
@@ -20,7 +20,7 @@ namespace BashSoft
             else if (comparison == "descending")
             {
 
-                PrintStudents(wantedData.OrderByDescending(x => x.Value.Sum())
+                PrintStudents(studentsMarks.OrderByDescending(x => x.Value)
                     .Take(studentsToTake)
                     .ToDictionary(pair => pair.Key, pair => pair.Value));
             }
@@ -30,9 +30,9 @@ namespace BashSoft
             }
         }       
 
-        private static void PrintStudents(Dictionary<string, List<int>> studentSorted)
+        private void PrintStudents(Dictionary<string, double> studentSorted)
         {
-            foreach (KeyValuePair<string,List<int>> kvp in studentSorted)
+            foreach (KeyValuePair<string,double> kvp in studentSorted)
             {
                 OutputWriter.PrintStudent(kvp);
             }
