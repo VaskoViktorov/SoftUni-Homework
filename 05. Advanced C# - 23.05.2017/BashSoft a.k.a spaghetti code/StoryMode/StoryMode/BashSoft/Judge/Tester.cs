@@ -5,12 +5,13 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using BashSoft.Contracts;
 using BashSoft.Exceptions;
 
 namespace BashSoft
 {
 
-    public class Tester
+    public class Tester : IContentComparer
     {
         public void CompareContent(string userOutputPath, string expectedOutputPath)
         {           

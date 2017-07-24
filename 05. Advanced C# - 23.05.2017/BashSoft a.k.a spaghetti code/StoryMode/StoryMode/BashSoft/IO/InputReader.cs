@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BashSoft.Contracts;
 
 namespace BashSoft
 {
-    public class InputReader
+    public class InputReader : IReader
     {
-        private CommandInterpreter interpreter;
+        private IInterpreter interpreter;
 
-        public InputReader(CommandInterpreter interpreter)
+        public InputReader(IInterpreter interpreter)
         {
             this.interpreter = interpreter;
         }

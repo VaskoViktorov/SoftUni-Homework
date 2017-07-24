@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
+using BashSoft.Contracts;
 using BashSoft.Exceptions;
 using BashSoft.IO.Commands;
 
 namespace BashSoft
 {
-    public class CommandInterpreter
+    public class CommandInterpreter : IInterpreter
     {
-        private Tester judge;
-        private StudentsRepository repository;
-        private IOManager inputOutputManager;
+        private IContentComparer judge;
+        private IDatabase repository;
+        private IDirectoryManager inputOutputManager;
 
-        public CommandInterpreter(Tester judge, StudentsRepository repository, IOManager inputOutputManager)
+        public CommandInterpreter(IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager)
         {
             this.judge = judge;
             this.repository = repository;
@@ -25,7 +25,7 @@ namespace BashSoft
        
             try
             {
-                Command command = this.ParseCommand(input, commandName, data);
+                IExecutable command = this.ParseCommand(input, commandName, data);
                 command.Execute();
             }
             catch (DirectoryNotFoundException dnfe)
@@ -47,7 +47,7 @@ namespace BashSoft
             }
         }
 
-        private Command ParseCommand(string input, string command, string[] data)
+        private IExecutable ParseCommand(string input, string command, string[] data)
         {
             switch (command)
             {

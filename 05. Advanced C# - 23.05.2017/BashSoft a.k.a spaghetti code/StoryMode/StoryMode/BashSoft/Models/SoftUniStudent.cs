@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BashSoft.Contracts;
 using BashSoft.Exceptions;
 
 namespace BashSoft.Models
 {
-    public class Student
+    public class SoftUniStudent : IStudent
     {
         private string userName;
-        private Dictionary<string, Course> enrolledCourses;
+        private Dictionary<string, ICourse> enrolledCourses;
         private Dictionary<string, double> marksByCourseName;
 
-        public Student(string userName)
+        public SoftUniStudent(string userName)
         {
             this.UserName = userName;
-            this.enrolledCourses = new Dictionary<string, Course>();
+            this.enrolledCourses = new Dictionary<string, ICourse>();
             this.marksByCourseName = new Dictionary<string, double>();
         }
 
@@ -34,7 +33,7 @@ namespace BashSoft.Models
             }
         }
 
-        public IReadOnlyDictionary<string, Course> EnrolledCourses
+        public IReadOnlyDictionary<string, ICourse> EnrolledCourses
         {
             get { return enrolledCourses; }
         }
@@ -44,13 +43,13 @@ namespace BashSoft.Models
             get { return marksByCourseName; }
         }
 
-        public void EnrollInCourse(Course course)
+        public void EnrollInCourse(ICourse softUniCourse)
         {
-            if (this.enrolledCourses.ContainsKey(course.Name))
+            if (this.enrolledCourses.ContainsKey(softUniCourse.Name))
             {
-                throw new DuplicateEntryInStructureException(this.userName, course.Name);
+                throw new DuplicateEntryInStructureException(this.userName, softUniCourse.Name);
             }
-            this.enrolledCourses.Add(course.Name, course);
+            this.enrolledCourses.Add(softUniCourse.Name, softUniCourse);
         }
 
         public void SetMarkOnCourse(string courseName, params int[] scores)
@@ -60,7 +59,7 @@ namespace BashSoft.Models
                 throw new CourseNotFoundException();
             }
 
-            if (scores.Length > Course.NumberOfTasksOnExam)
+            if (scores.Length > SoftUniCourse.NumberOfTasksOnExam)
             {
                 throw new ArgumentException(ExceptionMessages.InvalidNumberOfScores);
             }
@@ -71,7 +70,7 @@ namespace BashSoft.Models
         private double CalculateMark(int[] scores)
         {
             double persentageOfSolvedExam = scores.Sum() /
-                                            (double) (Course.NumberOfTasksOnExam * Course.MaxScoreOnExamTask);
+                                            (double) (SoftUniCourse.NumberOfTasksOnExam * SoftUniCourse.MaxScoreOnExamTask);
             double mark = persentageOfSolvedExam * 4 + 2;
 
             return mark;

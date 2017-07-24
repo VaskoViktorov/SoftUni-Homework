@@ -4,11 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BashSoft.Contracts;
 using BashSoft.Exceptions;
 
 namespace BashSoft
 {
-    public class IOManager
+    public class IOManager : IDirectoryManager
     {
         public void TraverseDirectory(int depth)
         {
@@ -83,18 +84,20 @@ namespace BashSoft
             {
                 string currentPath = SessionData.currentPath;
                 currentPath += "\\" + relativePath;
-                ChangeCurrentDirectoryAbsolute(currentPath);
+                ChangeCurrentDirectoryAbsoulute(currentPath);
             }
         }
 
-        public void ChangeCurrentDirectoryAbsolute(string absolutePath)
+
+
+        public void ChangeCurrentDirectoryAbsoulute(string absoulutePath)
         {
-            if (!Directory.Exists(absolutePath))
+            if (!Directory.Exists(absoulutePath))
             {
                 throw new InvalidPathException();                             
             }
 
-            SessionData.currentPath = absolutePath;
+            SessionData.currentPath = absoulutePath;
         }
     }
 }
