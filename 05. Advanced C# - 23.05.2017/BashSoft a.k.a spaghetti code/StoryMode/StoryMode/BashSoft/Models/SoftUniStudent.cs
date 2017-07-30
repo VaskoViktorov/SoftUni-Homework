@@ -8,28 +8,28 @@ namespace BashSoft.Models
 {
     public class SoftUniStudent : IStudent
     {
-        private string userName;
+        private string username;
         private Dictionary<string, ICourse> enrolledCourses;
         private Dictionary<string, double> marksByCourseName;
 
-        public SoftUniStudent(string userName)
+        public SoftUniStudent(string username)
         {
-            this.UserName = userName;
+            this.Username = username;
             this.enrolledCourses = new Dictionary<string, ICourse>();
             this.marksByCourseName = new Dictionary<string, double>();
         }
 
 
-        public string UserName
+        public string Username
         {
-            get { return this.userName; }
+            get { return this.username; }
             private set
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new InvalidStringException(nameof(this.userName));
+                    throw new InvalidStringException(nameof(this.username));
                 }
-               this.userName = value;
+               this.username = value;
             }
         }
 
@@ -47,7 +47,7 @@ namespace BashSoft.Models
         {
             if (this.enrolledCourses.ContainsKey(softUniCourse.Name))
             {
-                throw new DuplicateEntryInStructureException(this.userName, softUniCourse.Name);
+                throw new DuplicateEntryInStructureException(this.username, softUniCourse.Name);
             }
             this.enrolledCourses.Add(softUniCourse.Name, softUniCourse);
         }
@@ -75,5 +75,17 @@ namespace BashSoft.Models
 
             return mark;
         }
+
+        public int CompareTo(SoftUniStudent other)
+        {
+            if (ReferenceEquals(this, other)) return 0;
+            if (ReferenceEquals(null, other)) return 1;
+            return string.Compare(this.username, other.username, StringComparison.Ordinal);
+        }
+
+        public int CompareTo(IStudent other) => this.Username.CompareTo(other.Username);
+
+
+        public override string ToString() => this.Username;
     }
 }

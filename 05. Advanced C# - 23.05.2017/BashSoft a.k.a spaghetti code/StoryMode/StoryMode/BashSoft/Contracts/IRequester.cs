@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BashSoft.Contracts
 {
@@ -10,5 +8,8 @@ namespace BashSoft.Contracts
     {
         void GetStudentsScoreFromCourse(string courseName, string username);
         void GetAllStudentFromCourse(string courseName);
+
+        ISimpleOrderedBag<ICourse> GetAllCoursesSorted(IComparer<ICourse> cmp);
+        ISimpleOrderedBag<IStudent> GetAllStudentsSorted(IComparer<IStudent> cmp);
     }
 }

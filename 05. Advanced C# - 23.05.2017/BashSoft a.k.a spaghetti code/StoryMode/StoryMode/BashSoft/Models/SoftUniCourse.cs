@@ -37,11 +37,16 @@ namespace BashSoft.Models
         }
         public void EnrollStudent(IStudent student)
         {
-            if (this.studentsByName.ContainsKey(student.UserName))
+            if (this.studentsByName.ContainsKey(student.Username))
             {               
-                throw new DuplicateEntryInStructureException(student.UserName, this.name);
+                throw new DuplicateEntryInStructureException(student.Username, this.name);
             }
-            this.studentsByName.Add(student.UserName, student);
+            this.studentsByName.Add(student.Username, student);
         }
+
+
+        public int CompareTo(ICourse other) => this.Name.CompareTo(other.Name);
+
+        public override string ToString() => this.Name;
     }
 }

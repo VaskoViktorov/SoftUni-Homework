@@ -58,6 +58,7 @@
     <Compile Include="Contracts\IReader.cs" />
     <Compile Include="Contracts\IRequester.cs" />
     <Compile Include="Contracts\IStudent.cs" />
+    <Compile Include="DataStructures\SimpleSortedList.cs" />
     <Compile Include="Exceptions\DataAlreadyInitialisedException.cs" />
     <Compile Include="Exceptions\DataNotInitializedException.cs" />
     <Compile Include="Exceptions\DuplicateEntryInStructureException.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="IO\Commands\ChangeRelativePathCommand.cs" />
     <Compile Include="IO\Commands\Command.cs" />
     <Compile Include="IO\Commands\CompareFilesCommand.cs" />
+    <Compile Include="IO\Commands\DisplayCommand.cs" />
     <Compile Include="IO\Commands\DropDatabaseCommand.cs" />
     <Compile Include="IO\Commands\GetHelpCommand.cs" />
     <Compile Include="IO\Commands\MakeDirectoryCommand.cs" />
@@ -79,6 +81,8 @@
     <Compile Include="IO\Commands\ReadDatabaseCommand.cs" />
     <Compile Include="IO\Commands\ShowCourseCommand.cs" />
     <Compile Include="IO\Commands\TraverseFoldersCommand.cs" />
+    <Compile Include="IO\ISimpleOrderedBag.cs" />
+    <Compile Include="Contracts\ISimpleOrderedBag.cs" />
     <Compile Include="Models\SoftUniCourse.cs" />
     <Compile Include="Models\SoftUniStudent.cs" />
     <Compile Include="Contracts\IDataFilter.cs" />

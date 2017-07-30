@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace BashSoft.Exceptions
 {
    public  class DuplicateEntryInStructureException : Exception
