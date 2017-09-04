@@ -1,0 +1,153 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,900";
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans';    
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li{
+    display: flex;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: gray;
+    border-bottom: solid 2px #fff;
+}
+li:hover{
+    cursor: pointer;
+    color: black;
+    border-bottom-color: black;
+}
+.first{
+    margin-top: 50px;
+}
+.first div, .second div{
+    width: 43%;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 50px;
+}
+.first h1, .second h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+.first p, .second p {
+    margin-top: 0;
+
+}
+.first img, .second img{
+    width: 50%;
+    display: inline-block;
+}
+button{
+    background-color: red;
+    border: 0;
+    padding: 10px 40px;
+    border-radius: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
+button:hover{
+    cursor: pointer;
+    background-color: darkred;
+}
+.second{
+    background: #fff;
+}
+.under{
+     color: gray;
+     margin-top: 0px;
+     font-weight: bold;
+     text-transform: uppercase;
+     padding-left: 125px;
+}
+.under span{
+    color: black;
+
+}
+.second h1{
+    margin-bottom: 0px;
+    font-size: 60px;
+}
+.second .text{
+    padding-top: 100px;
+}
+.second div div{
+    padding-top: 100px;
+
+}
+.second div div p{
+    display: inline-block;
+    font-weight: bold;
+}
+.third{
+    background: gray;
+    height: 250px;
+}
+.third div{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+
+}
+.third h1{
+    display: inline-block;
+    margin: 0;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-left: 20px;
+}
+.third h1 span{
+    color: #fff;
+}
+.third a{
+    display: flex;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px; 
+    color: #fff;
+    margin: 0 auto;
+    justify-content: center;
+    border-bottom: solid 2px #ccc;
+    width: 130px;
+}
+
+.fourth img, .fourth div{
+    display: inline-block;
+
+}
+.fourth{
+    background: #ccc;
+    margin: 0px;
+    padding: 0px;
+}
+.fourth div h1{
+    font-size: 100px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 220px;
+}
+.fourth div{
+    vertical-align: top;
+    text-align: center;
+    padding-top: 50px;
+}
+.fourth div p {
+    font-size: 35px;  
+}
+.fourth div p span{
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+footer{
+    text-align: center;
+    font-size: 20px;
+}
