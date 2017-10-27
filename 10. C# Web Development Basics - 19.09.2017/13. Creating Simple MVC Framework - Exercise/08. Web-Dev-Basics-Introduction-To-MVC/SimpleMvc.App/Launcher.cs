@@ -13,7 +13,7 @@
             { }
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             var server = new WebServer(8000, new ControllerRouter(), new ResourceRouter());
 
