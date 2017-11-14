@@ -1,0 +1,44 @@
+﻿@model LogListingModel
+@{
+    ViewData["Title"] = "All Logs";
+}
+<h2>@ViewData["Title"]</h2>
+<a class="btn btn-warning" href="/logs/deleteall">Clear All Logs</a>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                User
+            </th>
+            <th>
+                Operation
+            </th>
+            <th>
+                Modified Table
+            </th>
+            <th>
+                Time
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model.Logs)
+        {
+            <tr>
+                <td>
+                    @log.Username
+                </td>
+                <td>
+                    @log.Operation
+                </td>
+                <td>
+                    @log.TableName
+                </td>
+                <td>
+                    @log.DateTime
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

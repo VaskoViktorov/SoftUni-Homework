@@ -1,0 +1,56 @@
+﻿@model AllCustomersModel
+
+@{
+    ViewData["Title"] = "AllListings Customers";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>Ordered in @( Model.OrderDirection.ToString().ToLower()) direction</h3>
+<div class="form-group">
+@if (Model.OrderDirection.ToString().ToLower() == "ascending")
+{
+    <a class="btn btn-default" href="/customers/all/descending">Descending Order</a>
+}
+else
+{
+    <a class="btn btn-default" href="/customers/all/ascending">Ascending Order</a>
+}
+</div>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Birthday
+            </th>
+            <th>
+                Is Young Driver
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+            <tr>
+                <td>
+                    @customer.Name
+                </td>       
+                <td>
+                    @customer.BirthDay.ToShortDateString()
+                </td>       
+                <td>
+                    @(customer.IsYoungDriver? "Yes":"No")
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="/customers/edit/@customer.Id">Edit</a>
+                    <a class="btn btn-danger  btn-sm" href="/customers/delete/@customer.Id">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
