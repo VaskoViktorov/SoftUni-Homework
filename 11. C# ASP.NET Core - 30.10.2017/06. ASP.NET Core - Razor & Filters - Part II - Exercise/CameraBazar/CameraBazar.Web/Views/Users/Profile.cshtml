@@ -1,0 +1,59 @@
+﻿@model UserModel
+@{
+    ViewData["Title"] = "Profile";
+}
+<h2>@Model.Username</h2>
+<div class="row">
+    <div class="col-md-5">
+        <p><b>Email:</b> <a>@Model.Email</a></p>
+        <p><b>Phone:</b> @Model.Phone</p>
+        <p><b>Cameras:</b> @Model.InStockQuantity in stock/@Model.OutOfStockQuantity out of stock</p>
+    </div>
+</div>
+<div class="row  ">
+    <h2>Cameras:</h2>
+    <div class="col-md-5">
+        @{
+            if (!Model.Cameras.Any())
+            {
+                <p>
+                    The user is not selling any cameras.Go to <a href="/cameras/all">Home Page</a> to find more offers of other users.
+                </p>
+            }
+            else
+            {
+                foreach (var camera in Model.Cameras)
+                {
+                    <div class="row table-bordered" style="padding: 20px;">
+                        <div class="col-sm-3">
+                            <img width="100" class="img-responsive" src="@camera.ImageUrl" alt="camera" />
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="row ">
+                                <p><b>@camera.Make @camera.Model</b></p>
+                                <br />
+                                <a href="/cameras/details/@camera.Id">Details</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="row">
+                                <p><b>$@camera.Price</b></p>
+                                <br>
+                                @if (camera.Quantity > 0)
+                                {
+                                    <p style="color: green"><b>IN STOCK</b></p>
+                                }
+                                else
+                                {
+                                    <p style="color: red"><b>OUT OF STOCK</b></p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                }
+            }
+        }
+    </div>
+</div>
+

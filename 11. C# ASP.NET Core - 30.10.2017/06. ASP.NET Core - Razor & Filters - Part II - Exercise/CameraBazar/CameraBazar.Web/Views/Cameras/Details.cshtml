@@ -1,0 +1,36 @@
+﻿@model CameraDetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>
+    @Model.Make @Model.Model - $@Model.Price -
+    @if (Model.Quantity > 0)
+    {
+        <span style="color: green"><b>IN STOCK</b></span>
+    }
+    else
+    {
+        <span style="color: red"><b>OUT OF STOCK</b></span>
+    }
+</h2>
+<div class="row">
+    <div class="col-lg-5">
+        <div class="row">
+            <a href="/users/profile/@Model.UserId">@Model.User.UserName</a>
+        </div>
+        <div class="row">
+            <img width="200" src="@Model.ImageUrl" alt="camera" />
+        </div>
+        <br>
+        <br>
+        <p><b> Is Full Frame:</b> @(Model.IsFullFrame ? "Yes" : "No")</p>
+        <p><b>Min Shutter Speed:</b> @Model.MinShutterSpeed"</p>
+        <p><b>Max Shutter Speed:</b> @Model.MaxShutterSpeed</p>
+        <p><b>Min ISO:</b> @(Model.MinISO == MinISOType.ISO100 ? 100 : 50)</p>
+        <p><b>Max ISO:</b> @Model.MaxISO</p>
+        <p><b>Video Resolution:</b> @Model.VideoResolution</p>
+        <p><b>Light Metering:</b> @Model.LightMetering</p>
+        <p><b>Description:</b> @Model.Description</p>
+        <a class="btn btn-md btn-default" href="/home/index">Back</a>
+    </div>
+</div>

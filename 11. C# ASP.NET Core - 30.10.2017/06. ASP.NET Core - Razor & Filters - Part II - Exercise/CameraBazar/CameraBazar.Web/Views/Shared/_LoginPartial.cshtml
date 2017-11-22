@@ -1,0 +1,25 @@
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    <li><b><a href="/users/profile/@UserManager.GetUserId(this.User)">My Profile</a></b><hr /></li>
+
+    <li><b><a href="/users/edit/@UserManager.GetUserId(this.User)">Edit My Profile</a></b><hr /></li>
+
+    <li><b><a asp-area="" asp-controller="Cameras" asp-action="Add">Add Cameras</a></b><hr /></li>
+
+    <li class=".myClass">
+        <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+            <button type="submit" class="btn btn-link"><b>Log out</b></button><hr />
+        </form>
+    </li>
+}
+else
+{
+
+    <li><a asp-area="" asp-controller="Account" asp-action="Register"><b>Register</b></a><hr /></li>
+    <li><a asp-area="" asp-controller="Account" asp-action="Login"><b>Log in</b></a><hr /></li>
+
+}
