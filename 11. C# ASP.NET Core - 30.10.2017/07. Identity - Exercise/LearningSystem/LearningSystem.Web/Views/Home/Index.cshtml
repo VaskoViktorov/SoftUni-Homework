@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CourseListingServiceModel>
+﻿@model HomeIndexViewModel
 
 @{
     ViewData["Title"] = "ActiveAsync Courses";
@@ -7,20 +7,25 @@
 <div class="jumbotron home-jumbotron">
     <h1 class="text-center">Welcome to our learning system!</h1>
 </div>
-
 <div class="row">
-    @foreach (var course in Model)
-    {
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title tex"><a asp-controller="Courses" asp-action="Details" asp-route-id="@course.Id">@course.Name</a></h3>
-                </div>
-                <div class="panel-body">
-                    @course.StartDate.ToShortDateString() - @course.EndDate.ToShortDateString()
-                </div>
-            </div>
+<div class="col-md-4"></div>
+   
+    <form asp-action="Search" method="get">
+        <div class="col-md-3">
+            <input asp-for="SearchText" class="form-control" placeholder="Search..."/>
         </div>
-    }
+        <div class="col-md-3">
+            <label asp-for="SearchInCourses"></label>
+            <input asp-for="SearchInCourses"/>
+            <label asp-for="SearchInUsers"></label>
+            <input asp-for="SearchInUsers"/>
+            <input class="btn btn-info" type="submit" value="Search"/>
+        </div>
+    </form>
+   
+</div>
+<br />
+<div class="row">
+   @Html.Partial("_CourseListingsPartial", Model.Courses)
 </div>
 

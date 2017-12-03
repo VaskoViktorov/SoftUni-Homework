@@ -8,6 +8,8 @@
     {
         Task<IEnumerable<CourseListingServiceModel>> ActiveAsync();
 
+        Task<IEnumerable<CourseListingServiceModel>> FindAsync(string searchText);
+
         Task<TModel> ByIdAsync<TModel>(int id) where TModel : class;
 
         Task<bool> SignInUser(int courseId, string userId);

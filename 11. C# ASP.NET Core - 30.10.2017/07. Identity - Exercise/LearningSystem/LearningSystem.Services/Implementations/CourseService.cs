@@ -28,7 +28,19 @@ namespace LearningSystem.Services.Implementations
                 .ProjectTo<CourseListingServiceModel>()
                 .ToListAsync();
 
-        public async Task<TModel> ByIdAsync<TModel>(int id) where  TModel : class 
+        public async Task<IEnumerable<CourseListingServiceModel>> FindAsync(string searchText)
+        {
+            searchText = searchText ?? string.Empty;
+
+            return await this.db
+                 .Courses
+                 .OrderByDescending(c => c.Id)
+                 .Where(c => c.Name.ToLower().Contains(searchText.ToLower()))
+                 .ProjectTo<CourseListingServiceModel>()
+                 .ToListAsync();
+        }
+
+        public async Task<TModel> ByIdAsync<TModel>(int id) where TModel : class
             => await this.db
                 .Courses
                 .Where(c => c.Id == id)
@@ -66,8 +78,8 @@ namespace LearningSystem.Services.Implementations
                 return false;
             }
 
-            var studentInCourse = await this.db.FindAsync<StudentCourse>(courseId,userId );
-            
+            var studentInCourse = await this.db.FindAsync<StudentCourse>(courseId, userId);
+
             this.db.Remove(studentInCourse);
 
             await this.db.SaveChangesAsync();

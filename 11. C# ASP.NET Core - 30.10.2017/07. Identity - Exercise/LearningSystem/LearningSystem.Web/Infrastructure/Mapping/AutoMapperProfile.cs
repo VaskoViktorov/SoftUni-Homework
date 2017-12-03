@@ -13,7 +13,7 @@
             var allTypes = AppDomain
                 .CurrentDomain
                 .GetAssemblies()
-                .Where(a => a.GetName().Name.Contains("LearningSystem"))
+                .Where(a => a.GetName().Name.Contains("BookShop"))
                 .SelectMany(a => a.GetTypes());
 
             allTypes

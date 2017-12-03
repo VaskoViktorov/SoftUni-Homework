@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LearningSystem.Web.Infrastructure.Extensions
+﻿namespace LearningSystem.Web.Infrastructure.Extensions
 {
     using Data;
     using Data.Models;
@@ -8,6 +6,7 @@ namespace LearningSystem.Web.Infrastructure.Extensions
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
+    using System;
     using System.Threading.Tasks;
 
     public static class ApplicationBuilderExtensions

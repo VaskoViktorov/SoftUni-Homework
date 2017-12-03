@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace LearningSystem.Web.Infrastructure.Extensions
+﻿namespace LearningSystem.Web.Infrastructure.Extensions
 {
+    using Microsoft.AspNetCore.Mvc;
+
     public static class ControllerExtensions
     {
         public static IActionResult ViewOrNotFound(this Controller controller, object model)
