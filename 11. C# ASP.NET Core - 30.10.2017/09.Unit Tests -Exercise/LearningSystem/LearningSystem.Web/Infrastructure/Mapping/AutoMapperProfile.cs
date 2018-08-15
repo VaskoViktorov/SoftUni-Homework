@@ -1,15 +1,14 @@
 ﻿namespace LearningSystem.Web.Infrastructure.Mapping
 {
     using AutoMapper;
+    using Common.Mapping;
     using System;
     using System.Linq;
-    using Common.Mapping;
 
     public class AutoMapperProfile : Profile
     {
         public AutoMapperProfile()
         {
-
             var allTypes = AppDomain
                 .CurrentDomain
                 .GetAssemblies()
@@ -18,10 +17,10 @@
 
             allTypes
                 .Where(t => t.IsClass && !t.IsAbstract && t
-                                .GetInterfaces()
-                                .Where(i => i.IsGenericType)
-                                .Select(i => i.GetGenericTypeDefinition())
-                                .Contains(typeof(IMapFrom<>)))
+                    .GetInterfaces()
+                    .Where(i => i.IsGenericType)
+                    .Select(i => i.GetGenericTypeDefinition())
+                    .Contains(typeof(IMapFrom<>)))
                 .Select(t => new
                 {
                     Destination = t,
@@ -35,15 +34,15 @@
                         })
                         .Where(i => i.Definition == typeof(IMapFrom<>))
                         .SelectMany(i => i.Arguments)
-                        .First()
+                        .First(),
                 })
                 .ToList()
                 .ForEach(mapping => this.CreateMap(mapping.Source, mapping.Destination));
 
             allTypes
                 .Where(t => t.IsClass
-                            && !t.IsAbstract
-                            && typeof(IHaveCustomMapping).IsAssignableFrom(t))
+                    && !t.IsAbstract
+                    && typeof(IHaveCustomMapping).IsAssignableFrom(t))
                 .Select(Activator.CreateInstance)
                 .Cast<IHaveCustomMapping>()
                 .ToList()
